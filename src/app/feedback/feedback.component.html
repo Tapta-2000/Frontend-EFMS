@@ -1,0 +1,260 @@
+<div class="container-fluid" style="background-image: url('/assets/feed-back.jpg');">
+    
+   
+
+
+        <div class="row pt-md-5 " >
+            <div class="col-md-3"></div>
+        <div class="col-md-6 pt-md-3 pb-md-2" style="background-color: white;">
+            <p>1. Are you satisfied with the quality of the accommodation provided by the company ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes1" class="col-sm-6">
+                            <button (click)="row11()" class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no1"class="col-sm-6">
+                            <button (click)="row12()" class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    
+    <div *ngIf="row2"class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 pb-md-2" style="background-color: white;">
+            <p>2. would you give rating the cleanliness and maintenance of the accommodation ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes2" class="col-sm-6">
+                            <button (click)="row21()"class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no2" class="col-sm-6">
+                            <button (click)="row22()" class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    <div *ngIf="row3"class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 pb-md-2" style="background-color: white;">
+            <p>3. Are the amenities provided in the accommodation sufficient for your needs ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes3"class="col-sm-6">
+                            <button (click)="row31()" class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no3"class="col-sm-6">
+                            <button (click)="row32()" class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    
+    <div *ngIf="row4" class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 pb-md-2" style="background-color: white;">
+            <p>4. Do you feel that the company provides a safe and secure environment for its employees ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes4"class="col-sm-6">
+                            <button (click)="row41()"class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no4"class="col-sm-6">
+                            <button (click)="row42()"class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+
+
+    <div *ngIf="row5" class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 pb-md-2"style="background-color: white;">
+            <p>5. Are you satisfied with the food quality and variety in the canteen ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes5"class="col-sm-6">
+                            <button (click)="row51()"class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no5"class="col-sm-6">
+                            <button (click)="row52()"class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    
+    <div *ngIf="row6"class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 pb-md-2"style="background-color: white;">
+            <p>6. Is the canteen clean and well-maintained ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes6"class="col-sm-6">
+                            <button (click)="row61()"class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no6"class="col-sm-6">
+                            <button (click)="row62()"class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    
+    
+    <div *ngIf="row7"class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 pb-md-2"style="background-color: white;">
+            <p>7. Are there any specific food items that you would like to see included in the canteen menu ?</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div *ngIf="yes7"class="col-sm-6">
+                            <button (click)="row71()" class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                        </div>
+                        <div *ngIf="no7"class="col-sm-6">
+                            <button (click)="row72()"class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+
+<div *ngIf="row8" class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 pb-md-2" style="background-color: white;">
+        <p>8. Are you satisfied with the transportation facilities provided by the company ?</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div *ngIf="yes8"class="col-sm-6">
+                        <button (click)="row81()"class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                    </div>
+                    <div *ngIf="no8"class="col-sm-6">
+                        <button (click)="row82()" class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+
+
+<div *ngIf="row9" class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 pb-md-2" style="background-color: white;">
+        <p>9. Are the transportation timings and routes convenient for you ?</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div *ngIf="yes9"class="col-sm-6">
+                        <button (click)="row91()" class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                    </div>
+                    <div *ngIf="no9"class="col-sm-6">
+                        <button (click)="row92()"class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+
+
+<div *ngIf="row10" class="row pb-md-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 pb-md-3" style="background-color: white;">
+        <p>10. Is the company transportation service reliable and punctual ?</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div *ngIf="yes10"class="col-sm-6">
+                        <button (click)="row101()" class="btn btn-block btn-success pt2 pb-2 ps-5 pe-5">YES</button>
+                    </div>
+                    <div *ngIf="no10"class="col-sm-6">
+                        <button (click)="row102()"class="btn btn-block btn-warning pt2 pb-2 ps-5 pe-5">NO</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="submit" >
+            <button (click)="onfeedsubmit()" class="btn btn-block btn-secondary">submit</button>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+
+</div>

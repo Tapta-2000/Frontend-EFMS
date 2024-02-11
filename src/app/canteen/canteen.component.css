@@ -1,0 +1,12 @@
+table, th, td {
+    border: 2px solid white;
+  }
+
+  .ng-touched .ng-pristine{
+
+    border:1px solid red;
+  }
+  .mclass
+  {
+    color:blue;
+  }

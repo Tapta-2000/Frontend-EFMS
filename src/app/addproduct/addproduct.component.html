@@ -1,0 +1,61 @@
+<div class="container p-lg-4 p-md-3 p-sm-2 ">
+    <div class="row d-flex align-items-center">
+        <div class="col-12">
+            <form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+               
+              
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="text" style="border-color:   darkblue ;"  [(ngModel)]="proddes.anyoffer" name="offer" id="form6Example3" class="form-control" />
+                  <label class="form-label" for="form6Example3">Add Offer</label>
+                </div>
+              
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="text"style="border-color: darkblue ;" [(ngModel)]="proddes.image" name="image"id="form6Example4" class="form-control" />
+                  <label class="form-label" for="form6Example4">Image</label>
+                </div>
+              
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" style="border-color: darkblue ;" [(ngModel)]="proddes.category" name="category"id="form6Example5" class="form-control" />
+                  <label class="form-label" for="form6Example5">Category</label>
+                </div>
+              
+                <!-- Number input -->
+                <div class="form-outline mb-4">
+                  <input type="text"style="border-color: darkblue ;" [(ngModel)]="proddes.model" name="model"id="form6Example6" class="form-control" />
+                  <label class="form-label" for="form6Example6">model</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="number"style="border-color: darkblue ;"[(ngModel)]="proddes.mrp" name="mrp"id="form6Example6" class="form-control" />
+                    <label class="form-label" for="form6Example6">MRP</label>
+                  </div>
+              
+                <!-- Message input -->
+                <div class="form-outline mb-4">
+                    <input type="number"style="border-color: darkblue ;"[(ngModel)]="proddes.price" name="price"id="form6Example6" class="form-control" />
+                    <label class="form-label" for="form6Example6">Price</label>
+                  </div>
+              
+                  <div class="form-outline mb-4">
+                    <input type="number"style="border-color: darkblue ;" [(ngModel)]="proddes.star" name="star"id="form6Example6" class="form-control" />
+                    <label class="form-label" for="form6Example6">Available product</label>
+                  </div>
+              
+              
+              
+                <!-- Checkbox -->
+               
+              
+                <!-- Submit button -->
+                <button type="submit" (click)="onsubmit()" class="btn btn-primary btn-block mb-4">Place order</button>
+              </form>
+            
+
+        </div>
+    </div>
+</div>
+
+

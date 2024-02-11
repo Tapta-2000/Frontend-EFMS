@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+<section class="vh-100 " style="background: #6a11cb;background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body ps-5 pe-5 text-center">
+  
+              <div class="mb-md-1 mt-md-4 ">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Admin Login</h2>
+                <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                <form action="" [formGroup]="adminform">
+
+                  
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="typeEmailX" formControlName="username" class="form-control form-control-lg" [(ngModel)]="admin.user"/>
+                    <label class="form-label" for="typeEmailX">Email</label>
+                    <div>
+                      <small style="color:red " *ngIf="myuser &&  myuser.pristine  && myuser.touched">Please enter the UserName</small>
+            
+                    </div>
+                  </div>
+                 
+                  
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="typePasswordX" formControlName="password" class="form-control form-control-lg" [(ngModel)]="admin.pwd" />
+                    <label class="form-label" for="typePasswordX">Password</label>
+                    <div>
+                      <small style="color:red " *ngIf="mypass &&  mypass.pristine  && mypass.touched">Please enter the Password</small>
+            
+                    </div>
+                  </div>
+                 
+                  
+                  
+                  
+                  <button class="btn btn-outline-light btn-lg px-5" [disabled]="adminform.invalid" (click)="adminlogin()" type="submit">Login</button>
+                  
+                </form>
+               
+              </div>
+  
+              
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

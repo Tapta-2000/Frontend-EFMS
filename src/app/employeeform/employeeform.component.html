@@ -1,0 +1,198 @@
+
+<div class="container-fluid" style="background-image: url('/assets/unused3.jpg');">
+  <div class="row ">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 mt-md-5 mb-md-5 mt-sm-1 mt-sm-1" style="background-color: white;">
+
+
+      <form action="" [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
+
+
+        <h2>Employee Details</h2>
+        <input type="text" class="mb-3" style="width:100%" [(ngModel)]="empdetails.name"  formControlName="name" placeholder="Enter Your Name"><br>
+        <div>
+          <small style="color:red " *ngIf="name &&  name.pristine  && name.touched">Please enter the Name</small>
+
+        </div>
+        <input type="text" class="mb-3" style="width:100%" [(ngModel)]="empdetails.empid"  formControlName="empid" placeholder="Employee Id"><br>
+        <div>
+          <small style="color:red " *ngIf="empid && empid.pristine && empid.touched">
+            Please enter the Employee Id
+          </small>
+
+        </div>
+        <input type="text" class="mb-3" style="width:100%" [(ngModel)]="empdetails.mob"  formControlName="mob" placeholder="Mobile"><br>
+        <div>
+          <small style="color:red " *ngIf="mobile && mobile.pristine && mobile.touched">
+            Please enter the Mobile Number.
+          </small>
+
+        </div>
+        <input type="email" class="mb-3" style="width:100%" [(ngModel)]="empdetails.email" formControlName="email" placeholder="Email Id"><br>
+        <div>
+          <small style="color:red " *ngIf="emailid && emailid.pristine && emailid.touched">
+            Please enter the Email Id
+          </small>
+
+        </div>
+        <input type="text" class="mb-3" style="width:100%" [(ngModel)]="empdetails.job" formControlName="job" placeholder="Job-title "><br>
+        <div>
+          <small style="color:red " *ngIf="job && job.pristine && job.touched">
+            Please enter your Job-title
+          </small>
+
+        </div>
+        <span>Gender : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="male" [(ngModel)]="empdetails.gender" formControlName="gender" id="off"><label
+          for="off" class="me-2">Male</label>
+        <input type="radio" class="me-2 mb-3" value="female" [(ngModel)]="empdetails.gender" formControlName="gender" id="off"><label
+          for="off">Female</label><br>
+
+        <label for="city"></label>
+
+
+        <select style="width:100%" class="mb-3" [(ngModel)]="empdetails.city"formControlName="city" id="city"placeholder="city" required>
+          <option value="1">Select City</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Pune">Pune</option>
+          <option value="Kochi">Kochi</option>
+        </select>
+        <label for="state"></label>
+
+
+        <select style="width:100%" class="mb-3" [(ngModel)]="empdetails.state" formControlName="state" id="state" placeholder="state"required>
+          <option value="1">Select State</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Kolkata">Kolkata</option>
+        </select>
+        <input type="text" class="mb-3" style="width:100%" [(ngModel)]="empdetails.Pincode" formControlName="pincode" placeholder="Pincode"><br>
+        <div>
+          <small style="color:red " *ngIf="pincode && pincode.pristine && pincode.touched">
+            Please enter the Pincode.
+          </small>
+
+        </div>
+
+        <textarea formControlName="textarea" id="" cols="97" rows="3" [(ngModel)]="empdetails.textarea" placeholder="Address"></textarea>
+
+        <div style="color:red" *ngIf="textarea && textarea.touched && !textarea.value">
+          <small>
+            Please Enter Address.
+          </small>
+        </div>
+<!-- <label for="file"></label><br>
+        <input type="file" formControlName="fileo" class="mb-3" id="file" style="width:50%"
+          placeholder="No File Chosen"><br>
+        <div>
+          <small style="color:red" *ngIf="file && file.touched && !file.value">
+            Please upload Profile Picture.
+          </small>
+        </div> -->
+
+        <h5>Canteen Information</h5>
+        <span>Monday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.monday" formControlName="monday"
+          id="monday"><label for="monday" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.monday" formControlName="monday"
+          id="monday"><label for="monday">NONVEG</label><br>
+        <span>Tuesday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.tuesday" formControlName="tuesday"
+          id="off"><label for="off" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.tuesday" formControlName="tuesday"
+          id="off"><label for="off">NONVEG</label><br>
+
+        <span>Wednesday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.wednesday" formControlName="wednesday"
+          id="off"><label for="off" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.wednesday" formControlName="wednesday"
+          id="off"><label for="off">NONVEG</label><br>
+
+        <span>Thrusday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.thrusday" formControlName="thrusday"
+          id="off"><label for="off" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.thrusday" formControlName="thrusday"
+          id="off"><label for="off">NONVEG</label><br>
+
+        <span>Friday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.friday" formControlName="friday" id="off"><label
+          for="off" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.friday" formControlName="friday"
+          id="off"><label for="off">NONVEG</label><br>
+
+        <span>Saturday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.saturday" formControlName="saturday"
+          id="off"><label for="off" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.saturday" formControlName="saturday"
+          id="off"><label for="off">NONVEG</label><br>
+
+        <span>Sunday : </span>
+
+
+        <input type="radio" class="me-2 mb-3" value="veg" [(ngModel)]="empdetails.sunday" formControlName="sunday" id="id"><label
+          for="id" class="me-2">VEG</label>
+        <input type="radio" class="me-2 mb-3" value="nonveg" [(ngModel)]="empdetails.sunday" formControlName="sunday"
+          id="id"><label for="id">NONVEG</label><br>
+
+        <h5>Choose Your Accomodation</h5>
+        <label for="accomodation"></label>
+
+
+        <select style="width:100%" class="mb-3" [(ngModel)]="empdetails.accomodation" formControlName="accomodation" id="accomodation" required>
+          <option value="1">Select Your Accomodation</option>
+          <option value="low">Budget Accommodations: "Affordable and Basic Rooms"</option>
+          <option value="middle">Mid-Range Accommodations: "Comfortable and Convenient Stays"</option>
+          <option value="upper">Upscale Accommodations: "Luxury and Style at Your Fingertips"</option>
+          <option value="Super">Luxury Accommodations: "Indulge in Ultimate Comfort and Elegance"</option>
+        </select>
+        <h5>Select Cab Timing</h5>
+        <span>Morning: </span>
+        <select style="width:40%" class="mb-3 me-3"[(ngModel)]="empdetails.morning" formControlName="morning" id="city" required>
+          <option value="1">Select Cab</option>
+          <option value="Cab1">Cab1-8.30AM</option>
+          <option value="Cab2">Cab2-9.00AM</option>
+          <option value="Cab3">Cab3-9.30AM</option>
+          <option value="Cab4">Cab4-10.00AM</option>
+          <option value="Cab5">Cab5-10.30AM</option>
+        </select>
+
+
+        <span>Evening: </span>
+        <select style="width:40%" class="mb-3" [(ngModel)]="empdetails.evening"formControlName="evening" id="city" required>
+          <option value="1">Select Cab</option>
+          <option value="Cab1">Cab1-5.30AM</option>
+          <option value="Cab2">Cab2-6.00AM</option>
+          <option value="Cab3">Cab3-6.30AM</option>
+          <option value="Cab4">Cab4-7.00AM</option>
+          <option value="Cab5">Cab5-7.30AM</option>
+        </select>
+
+
+
+        <div>
+          <button class="me-2 p-2 btn btn-primary" type="submit"  [disabled]="reactiveform.invalid"
+            value="submit">Submit</button>
+          <button class="btn btn-danger p-2" type="button" (click)="onreset()">Reset</button>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

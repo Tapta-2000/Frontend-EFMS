@@ -1,0 +1,212 @@
+
+<div class="container-fluid" style="background-image: url('/assets/unused3.jpg');background-attachment: fixed;">
+  <!-- <app-search></app-search> -->
+    <div class="row mb-5">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="background-color:white ;border:3px solid rgb(60, 2, 2); border-radius:10px">
+
+            <form  action="" [formGroup]="canform">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4 mt-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" formControlName="name" [(ngModel)]="foodobj.name" id="form6Example1" class="form-control" />
+                      <label class="form-label" for="form6Example1">Food name</label>
+                      <div>
+                        <small style="color:red " *ngIf="nameo &&  nameo.pristine  && nameo.touched">Please enter the Name</small>
+              
+                      </div>
+                    </div>
+                   
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" formControlName="type"id="form6Example2" [(ngModel)]="foodobj.type" class="form-control" />
+                      <label class="form-label" for="form6Example2">Veg/NonVeg</label>
+                      <div>
+                        <small style="color:red " *ngIf="typeo &&  typeo.pristine  && typeo.touched">Please enter the food type</small>
+              
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number"formControlName="id" id="form6Example5" [(ngModel)]="foodobj.id" class="form-control" />
+                    <label class="form-label" for="form6Example5">ID Number</label>
+                    <div>
+                      <small style="color:red " *ngIf="ido &&  ido.pristine  && ido.touched">Please enter the Id</small>
+            
+                    </div>
+                  </div>
+                
+              
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="file" formControlName="image" id="form6Example3" (change)="fileupload($event)" [(ngModel)]="foodobj.image" class="form-control" />
+                  <label class="form-label" for="form6Example3">Add Food Image</label>
+                </div>
+                
+               
+              
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="text" formControlName="price" id="form6Example4" [(ngModel)]="foodobj.price" class="form-control" />
+                  <label class="form-label" for="form6Example4">Price</label>
+                  <div>
+                    <small style="color:red " *ngIf="priceo &&  priceo.pristine  && priceo.touched">Please enter the Price</small>
+          
+                  </div>
+                </div>
+              
+              
+               
+                <div class="form-outline mb-4">
+                  <textarea class="form-control"formControlName="description" id="form6Example7" [(ngModel)]="foodobj.description"rows="4"></textarea>
+                  <label class="form-label" for="form6Example7">Food Description</label>
+                  <div>
+                    <small style="color:red " *ngIf="descripo &&  descripo.pristine  && descripo.touched">Please enter the Description</small>
+          
+                  </div>
+                </div>
+              
+              
+              
+                <!-- Submit button -->
+                <button type="submit" (click)="onclick()" [disabled]="canform.invalid" class="btn btn-primary btn-block mb-4">Add Food</button>
+                <button type="submit" (click)="fetch()"  class="btn btn-warning ms-1 btn-block mb-4">Fetch</button>
+              </form>
+             
+            
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+
+      <table class="d-none d-xl-block table table-striped table-dark table-responsive" style="font-weight:bold;border:4px solid white" >
+        <thead>
+        <tr style=" font-size:20px">
+          <th scope="col">#</th>
+          <th colspan="3"scope="col">Morning</th>
+          <th colspan="3" scope="col">Lunch</th>
+          <th colspan="3"scope="col">Dinner</th>
+          <th colspan="3"scope="col">Common(Lunch & Dinner)</th>
+        </tr>
+      </thead>
+      <tbody  style="font-weight:bold; border:1px solid white">
+        <tr  *ngFor="let x of pmenu">
+          <th  scope="row">{{x.Day}}</th>
+          <td>{{x.breakfast1}}</td>
+          <td>{{x.breakfast2}}</td>
+          <td>{{x.breakfast3}}</td>
+          <td>{{x.lunch1}}</td>
+          <td>{{x.lunch2}}</td>
+          <td>{{x.lunch3}}</td>
+          <td>{{x.dinner1}}</td>
+          <td>{{x.dinner2}}</td>
+          <td>{{x.dinner3}}</td>
+          <td>{{x.common1}}</td>
+          <td>{{x.common2}}</td>
+          <td>{{x.common3}}</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+
+
+
+<div class="container" >
+  <div class="row ">
+    <div class="col-md-6 col-sm-6  p-md-4 " >
+      <h5 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Monday</h5>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #0AF70D; color:white ;font-weight: bold;" >VEG: [{{weekdays.monv}}]</h6>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color:#DF6237;; color:white ;font-weight: bold;">NONVEG: [{{weekdays.monnv}}]</h6>
+      
+    </div>
+    <div class="col-md-6 col-sm-6 p-md-4 " >
+      <h5 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Tuesday</h5>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #0AF70D; color:white ;font-weight: bold;">VEG: [{{weekdays.tuesv}}]</h6>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #DF6237;; color:white ;font-weight: bold;">NONVEG: [{{weekdays.tuesnv}}]</h6>
+    </div>
+    <div class="col-md-6 col-sm-6 p-md-4 " >
+      <h5 class="w-75 p-md-4 p-sm-2 " style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Wednesday</h5>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #0AF70D; color:white ;font-weight: bold;">VEG: [{{weekdays.wedv}}]</h6>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #DF6237;; color:white ;font-weight: bold;">NONVEG: [{{weekdays.wednv}}]</h6>
+    </div>
+    <div class="col-md-6 col-sm-6 p-md-4 " >
+      <h5 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Thrusday</h5>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #0AF70D; color:white ;font-weight: bold;">VEG: [{{weekdays.thuv}}]</h6>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #DF6237;; color:white ;font-weight: bold;">NONVEG: [{{weekdays.thunv}}]</h6>
+    </div>
+    <div class="col-md-6 col-sm-6 p-md-4 " >
+      <h5 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Friday</h5>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #0AF70D; color:white ;font-weight: bold;">VEG: [{{weekdays.friv}}]</h6>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #DF6237;; color:white ;font-weight: bold;">NONVEG: [{{weekdays.frinv}}]</h6>
+    </div>
+    <div class="col-md-6 col-sm-6 p-md-4 " >
+      <h5 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Saturday</h5>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #0AF70D ;color:white ;font-weight: bold;">VEG: [{{weekdays.satv}}]</h6>
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color: #DF6237;color:white ;font-weight: bold;">NONVEG: [{{weekdays.satnv}}]</h6>
+    </div>
+
+    <div class="col-md-4  p-md-4  ">
+      <h5 class="w-75 p-md-4 p-sm-2 " style="border-radius:50px;background-color: rgb(3, 9, 95); color:white ;font-weight: bold;">Sunday</h5>
+    </div>
+    <div class="col-md-4 col-sm-6 p-md-4 ">
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color:#0AF70D; color:white ;font-weight: bold;">VEG: [{{weekdays.satv}}]</h6>
+    </div>
+    <div class="col-md-4 col-sm-6 p-md-4 ">
+      <h6 class="w-75 p-md-4 p-sm-2" style="border-radius:50px;background-color:#DF6237; color:white ;font-weight: bold;">NONVEG: [{{weekdays.satnv}}]</h6>
+    </div>
+
+    
+
+
+  </div>
+ </div>
+
+
+
+<div class="container ">
+    <div class="row">
+
+        
+        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let x of foodarray">
+
+            
+            <div class="card" >
+                <img class="card-img-top" [src]="x.image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{x.name}}</h5>
+                    <h6 class="card-subtitle mb-2 "  [ngStyle]="{color:x.type.toLowerCase()=='veg' ? 'green' : 'red'}">{{x.type}}</h6>
+                 
+                    <p class="card-text">{{x.description}}</p>
+                    <p [ngClass]="'myclass'">Price: {{x.price | currency:'INR'}}</p>
+                   
+                    
+                </div>
+                <div class="card-body">
+                  <button (click)="deletefood(x._id)" class="btn btn-block btn-danger">DELETE</button>
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    </div>
+
+  </div>
+    
+    

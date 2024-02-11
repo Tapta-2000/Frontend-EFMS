@@ -1,0 +1,67 @@
+
+<div class="container-fluid" style="background-image: url('/assets/unused1.jpg');background-attachment: fixed;">
+  <app-commonsearch #searchid (myevent)="comingevent($event)"></app-commonsearch>
+
+ 
+ 
+  <div class="row m-md-5 m-sm-1">
+    
+    
+    <div *ngFor="let x of rooms" class="col-lg-4 col-xl-3 col-md-6 mt-md-4 mb-md-4 mt-sm-1 mb-sm-1" > 
+        
+      <div class="card" >
+        
+        <div class="card-body">
+          <h5 class="card-title">Name : {{x.name}} </h5>
+          <h6 class="card-title">Employee Id: {{x.empid}} </h6>
+          <p class="card-text">Email : {{x.email}} </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Position: {{x.job}} </li>
+          <li class="list-group-item">Gender: {{x.gender}} </li>
+          <li class="list-group-item">Mobile: {{x.mob}} </li>
+          <li class="list-group-item" [ngStyle]="{color:x.accomodation=='middle'?'brown':x.accomodation=='upper'?'green':x.accomodation=='super'?'blue':'black'}" >Accomodation Type: {{x.accomodation}} </li>
+        </ul>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <button class="btn btn-block btn-success me-5">Organization</button>
+            </div>
+            <div class="col-md-6">
+              <button (click)="delete(x._id)" class="btn btn-block pt-1 pb-1  btn-danger">Delete</button>
+            </div>
+          </div>
+         
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+   <div class="container-fluid" style="background-color: rgb(10, 3, 109);">
+    <div class="row ">
+      <div class="col-md-4 p-4" >
+        <h6 class="w-75 p-4" style="background-color: rgb(116, 228, 30); color:white ;font-weight: bold;">MALE: [{{male}}]</h6>
+      </div>
+      <div class="col-md-4 p-4" >
+        <h6 class="w-75 p-4" style="background-color: rgb(35, 120, 163); color:white ;font-weight: bold;">FEMALE: [{{female}}] </h6>
+      </div>
+      <div class="col-md-4 p-4" >
+        <h6 class="w-75 p-4" style="background-color: rgb(68, 196, 120); color:white ;font-weight: bold;">INTERN: [{{intern}}]</h6>
+      </div>
+      <div class="col-md-4 p-4" >
+        <h6 class="w-75 p-4" style="background-color: rgb(187, 137, 58); color:white ;font-weight: bold;">MIDDLE CLASS ROOMS: [{{middle}}]</h6>
+      </div>
+      <div class="col-md-4 p-4" >
+        <h6 class="w-75 p-4" style="background-color: rgb(189, 78, 172); color:white ;font-weight: bold;">UPPER CLASS ROOMS: [{{upper}}]</h6>
+      </div>
+      <div class="col-md-4 p-4" >
+        <h6 class="w-75 p-4" style="background-color: rgb(217, 197, 67); color:white ;font-weight: bold;">SUPER CLASS ROOMS: [{{super}}]</h6>
+      </div>
+    </div>
+   </div>
+
+
+    

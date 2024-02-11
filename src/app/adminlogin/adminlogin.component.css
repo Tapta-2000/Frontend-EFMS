@@ -1,0 +1,4 @@
+.ng-touched .ng-pristine
+{
+    border:2px solid red
+}

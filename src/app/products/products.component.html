@@ -1,0 +1,47 @@
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row">
+        <h5 class="mb-3"><a routerLink="../cart" class="text-body"><i
+          class="fas fa-long-arrow-alt-left me-2"></i>Go to Cart</a></h5>
+        <div class="col-md-4 col-lg-3 col-sm-12 mb-4 mb-lg-0" *ngFor="let product of productarr">
+          <div class="card">
+            <div class="d-flex justify-content-between p-3">
+              <p class="lead mb-0">{{product.anyoffer}}</p>
+              <div
+                class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong"
+                style="width: 35px; height: 35px;">
+                <p class="text-white mb-0 small">x4</p>
+              </div>
+            </div>
+            <img style="height:200px" [src]="product.image"
+              class="card-img-top" alt="Laptop" />
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <p class="small"><a href="#!" class="text-muted">{{product.category}}</a></p>
+                <p class="small text-danger"><s>${{product.mrp}}</s></p>
+              </div>
+  
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="mb-0">{{product.model}}</h5>
+                <h5 class="text-dark mb-0">${{product.price}}</h5>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <p class="text-muted mb-0">Available: <span class="fw-bold">{{product.star}}</span></p>
+                <button class="" style="border-radius: 20%;color: white; background-color: darkturquoise;"><h6>Learn More</h6></button>
+              
+                
+              </div>
+              
+                <button (click)="addtocart(product)" style=" font-weight: bold; color: white; border-color:white ;border-radius: 20px; border-radius: 20%; background-color: darkred;"class=" p-1">Add To Cart</button>
+              
+  
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+       
