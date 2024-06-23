@@ -9,17 +9,18 @@ export class EmployeeDetails
 {
 
     constructor(private http:HttpClient){ }
+    backurl='https://backend-efms.vercel.app'
 
 
 public accessjson()
 {
-    const url='http://localhost:3000/Employeeform';
+    const url=this.backurl+'/Employeeform';
   return  this.http.get<any[]>(url);
 }
 
 public deleteobject(id:string)
 {
-    const url='http://localhost:3000/Employeeform/';
+    const url=this.backurl+'/Employeeform/';
     this.http.delete(url+id).subscribe(()=>
     {
         console.log();

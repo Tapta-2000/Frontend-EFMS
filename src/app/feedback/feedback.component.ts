@@ -196,7 +196,7 @@ feedobj:any={}
 
   
   
- 
+ backurl='https://backend-efms.vercel.app';
 onfeedsubmit()
 {
 
@@ -216,7 +216,7 @@ onfeedsubmit()
   console.log("check feedback")
   
   console.log(this.feedobj);
-  this.http.post('http://localhost:3000/feedback',myfeedback).subscribe((val)=>{
+  this.http.post(this.backurl+'/feedback',myfeedback).subscribe((val)=>{
     console.log(val);
    
    

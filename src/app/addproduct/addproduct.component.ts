@@ -22,9 +22,10 @@ export class AddproductComponent {
 
 
   }
+  backurl='https://backend-efms.vercel.app'
   onsubmit()
   {
-    const url='http://localhost:3000/products'
+    const url=this.backurl+'/products'
     this.http.post(url,this.proddes).subscribe((res)=>
     {
       console.log(res)

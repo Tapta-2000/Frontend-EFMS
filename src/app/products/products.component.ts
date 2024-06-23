@@ -15,10 +15,11 @@ export class ProductsComponent {
     this.getproducts();
 
   }
+  backurl='https://backend-efms.vercel.app';
 
   addtocart(prodobj:any)
   {
-    const url='http://localhost:3000/addtocartitems';
+    const url=this.backurl+'/addtocartitems';
     this.http.post(url,prodobj).subscribe((res)=>
     {
       console.log(res);

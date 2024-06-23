@@ -88,12 +88,13 @@ export class CanteenComponent  {
     this.serverfun();
 
   }
+  backurl='https://backend-efms.vercel.app';
   
   // foodarray:any []=this.food.myarray;
   foodarray:any[]=[];
   private serverfun()
 {
-    this.http.get<any[]>('http://localhost:3000/Myfoods').subscribe((res)=>
+    this.http.get<any[]>(this.backurl+'/Myfoods').subscribe((res)=>
     {
       
       this.foodarray=res;
@@ -141,10 +142,11 @@ fetch()
   this.serverfun();
 }
 
+
    onclick()
    {
     this.food.addarray(this.foodobj);
-    this.http.post('http://localhost:3000/Myfoods',this.foodobj).subscribe((res)=>
+    this.http.post(this.backurl+'/Myfoods',this.foodobj).subscribe((res)=>
     {
       console.log(res);
    
@@ -169,7 +171,7 @@ fetch()
    }
    deletefood(id:string)
    {
-    const url='http://localhost:3000/Myfoods/' 
+    const url=this.backurl+'/Myfoods/' 
     this.http.delete(url+id).subscribe(()=>
     console.log())
    }

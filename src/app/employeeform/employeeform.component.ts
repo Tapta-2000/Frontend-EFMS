@@ -13,9 +13,9 @@ export class EmployeeformComponent {
   constructor(private http:HttpClient,private myemployee:EmployeeDetails){}
   myemployeearr:any[]=[];
 
-
+backurl='https://backend-efms.vercel.app'
   ngOnInit():void{
-    this.http.get<any[]>('http://localhost:3000/Employeeform').subscribe((val)=>
+    this.http.get<any[]>(this.backurl+'/Employeeform').subscribe((val)=>
     {
       console.log(val);
     })

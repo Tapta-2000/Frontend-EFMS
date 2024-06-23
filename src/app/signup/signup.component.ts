@@ -264,10 +264,7 @@ export class SignupComponent {
     const finalxor=tempxor1 ^ tempxor2
     this.key5=finalxor.toString(2);
 
-    // this.http.get('http://localhost:3000/Signin').subscribe((val)=>
-    // {
-    //   console.log(val);
-    // })
+  
 
    
   
@@ -420,6 +417,7 @@ return newpassword;
   }
 
   myarr:any[]=[];
+  backurl='https://backend-efms.vercel.app';
 
   onsubmit()
   {
@@ -427,19 +425,12 @@ return newpassword;
   
    this.registration.password= this.passwordencryption(this.registration.password)
 
-   this.http.post('http://localhost:3000/Signin',this.registration).subscribe((val)=>
+   this.http.post(this.backurl+'/Signin',this.registration).subscribe((val)=>
    {
      console.log(val);
    })
    
-    // window.localStorage.setItem('Registration',JSON.stringify(this.myarr));
-    // this.registration={
-    //   firstname:'',
-    //   lastname:'',
-    //   email:'',
-    //   password:''
   
-    // };
     
   }
 

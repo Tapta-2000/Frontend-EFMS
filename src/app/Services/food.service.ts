@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class Foodthings {
     constructor(private http:HttpClient){};
+     backurl='https://backend-efms.vercel.app';
     myarray: any[] = [
       
     ];
@@ -27,14 +28,14 @@ export class Foodthings {
 
     getproducts()
     {
-        const url='http://localhost:3000/products';
+        const url=this.backurl+'/products';
         return this.http.get<any[]>(url);
     }
 
 
 comingtocart()
 {
-    const url='http://localhost:3000/addtocartitems';
+    const url=this.backurl+'/addtocartitems';
     return this.http.get<any[]>(url);
     
 }
