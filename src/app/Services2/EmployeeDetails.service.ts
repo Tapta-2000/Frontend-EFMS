@@ -15,6 +15,7 @@ export class EmployeeDetails
 public accessjson()
 {
     const url=this.backurl+'/Employeeform';
+    console.log("my production url",url)
   return  this.http.get<any[]>(url);
 }
 
